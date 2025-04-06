@@ -39,6 +39,8 @@ int main() {
         if (solution == 1) {
             double num = checkTryToInputDouble();
             if (!dq.isEmpty()) {
+                cout << "Дек до: " << endl;
+                dq.printALL();
                 cout << "Удаляем левый элемент: " << endl;
                 dq.deleteFront();
                 dq.printALL();
