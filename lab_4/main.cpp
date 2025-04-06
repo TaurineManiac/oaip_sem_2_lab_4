@@ -3,12 +3,19 @@
 #include <inputCheck.h>
 #include "header.h"
 #include <locale>
+#include <iomanip>
 
 using namespace std;
 using namespace mylib;
 
 int main() {
+    cout << "30.Создать дек для плавающих чисел. Максимальный размер дека вводится с экрана. " << endl
+         << "Создать функции для ввода и вывода элементов дека. Ввести в дек числа с экрана. " << endl
+         << "После этого перейти в режим ввода, при котором перед занесением элемента происходит удаление левого элемента." << endl;
     setlocale(LC_ALL, "Russian");
+
+    // Устанавливаем форматирование для всех чисел с плавающей точкой
+    cout << std::fixed << std::setprecision(2);
 
     // Ввод максимального размера дека
     cout << "Введите максимальный размер дека: ";
@@ -26,7 +33,7 @@ int main() {
     cout << "Заполняем дек случайными числами..." << endl;
     for (int i = 0; i < maxSize; i++) {
         double randomNum = dist(gen);
-        dq.addBack(randomNum);  // Исправлено: dq.addBack(randomNum)
+        dq.addBack(randomNum);
     }
     dq.printALL();
 
@@ -50,7 +57,7 @@ int main() {
             dq.printALL();
         } else if (solution == 2) {
             cout << "Выход из программы." << endl;
-            break;  // Исправлено: break находится внутри цикла
+            break;
         }
     }
 

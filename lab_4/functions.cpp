@@ -1,6 +1,5 @@
 #include "header.h"
 #include <iostream>
-#include <iomanip>
 
 using namespace std;
 
@@ -53,7 +52,7 @@ void Deququququque::addBack(double num) {
         newNode->prev = tail;
         tail = newNode;
     }
-    currentSize++;  // Исправлено: добавлено увеличение currentSize
+    currentSize++;
 }
 
 void Deququququque::deleteFront() {
@@ -96,9 +95,7 @@ void Deququququque::printALL() {
     cout << "Содержимое дека: nullptr <-> ";
     Node* current = head;
     while (current != nullptr) {
-        cout << "[" << std::fixed << std::setprecision(2) << current->data << "]";
-//        std::fixed: Указывает, что нужно выводить число с плавающей точкой.
-//        std::setprecision(2): Устанавливает 2 знака после запятой (можно изменить по вашему усмотрению).
+        cout << "[" << current->data << "]";
         if (current->next != nullptr) {
             cout << " <-> ";
         }
